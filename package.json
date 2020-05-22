@@ -1,52 +1,24 @@
 {
-  "_args": [
-    [
-      "laravel-mix-compress-images@1.0.4",
-      "C:\\AppServ\\www\\liveSport"
-    ]
-  ],
-  "_development": true,
-  "_from": "laravel-mix-compress-images@1.0.4",
-  "_id": "laravel-mix-compress-images@1.0.4",
-  "_inBundle": false,
-  "_integrity": "sha512-HT5WB3D+lpR5V2jQSvNjMPWyR8FcE7EFgpIK6L4dn01haBj3CPYpfIjB7cOl4m1Z8Kay4vOdXROtq/GwUz5k2g==",
-  "_location": "/laravel-mix-compress-images",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "laravel-mix-compress-images@1.0.4",
-    "name": "laravel-mix-compress-images",
-    "escapedName": "laravel-mix-compress-images",
-    "rawSpec": "1.0.4",
-    "saveSpec": null,
-    "fetchSpec": "1.0.4"
-  },
-  "_requiredBy": [
-    "#DEV:/"
-  ],
-  "_resolved": "https://registry.npmjs.org/laravel-mix-compress-images/-/laravel-mix-compress-images-1.0.4.tgz",
-  "_spec": "1.0.4",
-  "_where": "C:\\AppServ\\www\\liveSport",
   "author": {
-    "name": "Thomas Sécher"
+    "name": "zxc1235711"
   },
   "dependencies": {
     "compress-images": "^1.5.8",
     "copy-webpack-plugin": "^5.1.1",
     "laravel-mix": "^5.0.1"
   },
-  "description": "Add compress-images tools for laravel mix",
+  "description": "fixed some laravel-mix-images's problem for my self",
   "keywords": [
     "mix",
-    "compress-images"
+    "compress-images",
+    "laravel-mix-images"
   ],
   "license": "ISC",
   "main": "src/index.js",
   "name": "@zxc1235711/laravel-mix-compress-images",
-  "version": "1.0.4",
+  "version": "1.0.0",
   "repository":{
     "type": "git",
-    "url": "https://github.com/smlsunxie/test-npm-module.git"
+    "url": "https://github.com/pony168-jimmy/laravel-mix-compress-images.git"
   }
 }
