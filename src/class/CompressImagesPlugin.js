@@ -73,8 +73,8 @@ class CompressImagesPlugin {
 	 * @returns {Promise<any>}
 	 */
 	processOneFile(path, compilation) {
+		const rules = /\.(jpg|JPG|jpeg|JPEG|png|svg)$/;
 		const callback = (resolve) => {
-
 			let destination = path.split('/');
 			// Forget the filename.
 			let filename = destination.pop();
@@ -82,15 +82,31 @@ class CompressImagesPlugin {
 			let del = (destination.length > 0 ?  destination.join('/') : '') + '/';	
 			destination = destination.splice(1);
 			destination = (destination.length > 0 ? '/' + destination.join('/') : '') + '/';			
-			destination = this.compressParameters.destination + '/' + this.output + '/';
+			destination = this.compressParameters.destination + '/' + this.output + destination;
 			
+			// if file can not be compiled, copt origin file to destination
+			if(!filename.match(rules)){
+				if (!fs.existsSync(destination)){
+					fs.mkdirSync(destination, { recursive: true });
+				}		
+				fs.copyFile(path, destination+filename, (err) => {
+					if (err) throw err;					
+					let data = fs.readFileSync(del + filename);
+					if (data) {
+						delete compilation.assets[path];
+						compilation.assets['../' + del + filename] = new RawSource(data);
+					}					
+				});
+				resolve();
+			}
+
 			compress_images(
 				path,
 				destination,
 				{
-					compress_force: false,
+					compress_force: true,
 					statistic: true,
-					autoupdate: true
+					autoupdate: true,
 				},
 				false,
 				{
@@ -105,19 +121,17 @@ class CompressImagesPlugin {
 				{
 					gif: this.compressParameters.gif
 				},
-				(error, completed, statistic) => {
-
-						if (completed) {
-							let data = fs.readFileSync(del + filename);
-							if (data) {
-								delete compilation.assets[path];
-								compilation.assets['../' + del + filename] = new RawSource(data);
-							}
-						}						
+				(error, completed, statistic) => {									
+					if (completed) {
+						let data = fs.readFileSync(del + filename);
+						if (data) {
+							delete compilation.assets[path];
+							compilation.assets['../' + del + filename] = new RawSource(data);
+						}
+					}
 					resolve();
 				});
 		}
-
 		return new Promise(callback);
 	}
 }

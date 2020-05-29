@@ -16,6 +16,7 @@ class MixCompressImages {
 	}
 
 	webpackPlugins() {
+
 		const CompressImagesPlugin = require('./CompressImagesPlugin');
 		const CopyWebpackPlugin = require('copy-webpack-plugin');
 

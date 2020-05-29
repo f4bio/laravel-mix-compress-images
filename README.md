@@ -1,5 +1,5 @@
-# laravel-mix-compress-image
-Add a compress-images process for mix.
+# @zxc1235711/laravel-mix-compress-images
+fixed aravel-mix-compress-images for myself
 
 ## how to
 
@@ -14,7 +14,7 @@ The function take 3 parameters :
 Ex.
 ```
 let mix = require('laravel-mix');
-require('laravel-mix-compress-images');
+require('@zxc1235711/laravel-mix-compress-images')
 
 
 /**
@@ -26,7 +26,7 @@ require('laravel-mix-compress-images');
  *	    - img/
  *	        - test.jpg
  *	        - png/
- *	            - test.png
+ *	            - test.webp
  *
  * ---------
  * After :
@@ -34,12 +34,12 @@ require('laravel-mix-compress-images');
  *      - destination/
  *          - test.jpg
  * 	        - png/
- *          	- test.png
+ *          	- test.webp
  * - src/
  *	    - img/
  *	        - test.jpg
  *	        - png/
- *	            test.png
+ *	            test.webp
  *
  *
  * As you can see, even png files will be processed because we did not specify
@@ -59,4 +59,7 @@ mix
 			}
 		}
 	);
+
+
+
 ```

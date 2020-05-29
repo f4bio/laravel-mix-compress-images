@@ -16,7 +16,7 @@
   "license": "ISC",
   "main": "src/index.js",
   "name": "@zxc1235711/laravel-mix-compress-images",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository":{
     "type": "git",
     "url": "https://github.com/pony168-jimmy/laravel-mix-compress-images.git"
