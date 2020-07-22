@@ -8,7 +8,7 @@ to compress images.
 
 The function take 3 parameters : 
 - pattern : the input patterns of the files you want to proceed (string or array)
-- output : the output directory into the mix public path
+- output : the output directory into the mix public path. this param can be a empty string ,it will use your file origin path be you output path.
 - compressParameters: the compress parameters according to https://www.npmjs.com/package/compress-images
 
 Ex.
@@ -59,7 +59,6 @@ mix
 			}
 		}
 	);
-
 
 
 ```

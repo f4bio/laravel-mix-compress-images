@@ -7,7 +7,7 @@ class CompressImagesPlugin {
 
 	constructor(patterns = {}, output = {}, compressParameters = {}) {
 		this.patterns = patterns;
-		this.output = output;
+		this.output = output.trim() ? `/${output}` : '';
 		this.compressParameters = {
 			...{
 				jpg: {
@@ -79,10 +79,10 @@ class CompressImagesPlugin {
 			// Forget the filename.
 			let filename = destination.pop();
 			// As we use this.output, we delete the first rep.
-			let del = (destination.length > 0 ?  destination.join('/') : '') + '/';	
+			let del = (destination.length > 0 ?  destination.join('/') : '') + '/';
 			destination = destination.splice(1);
-			destination = (destination.length > 0 ? '/' + destination.join('/') : '') + '/';			
-			destination = this.compressParameters.destination + '/' + this.output + destination;
+			destination = (destination.length > 0 ? '/' + destination.join('/') : '') + '/';	
+			destination = this.compressParameters.destination + this.output + destination;
 			
 			// if file can not be compiled, copt origin file to destination
 			if(!filename.match(rules)){

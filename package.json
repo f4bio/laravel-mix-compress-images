@@ -7,7 +7,7 @@
     "copy-webpack-plugin": "^5.1.1",
     "laravel-mix": "^5.0.1"
   },
-  "description": "fixed some laravel-mix-images's problem for my self",
+  "description": "fixed some laravel-mix-images's problem for myself",
   "keywords": [
     "mix",
     "compress-images",
@@ -16,7 +16,7 @@
   "license": "ISC",
   "main": "src/index.js",
   "name": "@zxc1235711/laravel-mix-compress-images",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "repository":{
     "type": "git",
     "url": "https://github.com/pony168-jimmy/laravel-mix-compress-images.git"
