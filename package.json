@@ -3,9 +3,9 @@
     "name": "zxc1235711"
   },
   "dependencies": {
-    "compress-images": "^1.5.8",
-    "copy-webpack-plugin": "^5.1.1",
-    "laravel-mix": "^5.0.1"
+    "compress-images": "^2.0.5",
+    "copy-webpack-plugin": "^10.2.4",
+    "laravel-mix": "^6.0.43"
   },
   "description": "fixed some laravel-mix-images's problem for myself",
   "keywords": [
